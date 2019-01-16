@@ -1,2 +1,4 @@
 # EchartsDemo
-Echarts 折线图使用demo
+
+采用一个实例显示两个不同数据
+并且能实时获取新数据动态更新
