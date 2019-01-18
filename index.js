@@ -2,7 +2,7 @@
  * @Author: web_zhang 
  * @Date: 2019-01-16 18:47:26 
  * @Last Modified by: ZhangYanKun
- * @Last Modified time: 2019-01-16 18:48:00
+ * @Last Modified time: 2019-01-17 17:58:55
  */
 
 
@@ -31,10 +31,50 @@ let option = {
 		left: 'center',
 		text: datas.upText
 	}, {
-		top: '50%',				// 下面的折线图标题位置
+		top: '52%',				// 下面的折线图标题位置
 		left: 'center',
 		text: datas.downText
 	}],
+	toolbox: {
+		// left: 'left',
+		feature: {
+			dataZoom: {
+				yAxisIndex: 'none'
+			},
+			restore: {},
+			saveAsImage: {}
+		}
+	},
+	dataZoom: [
+        {
+            type: 'slider',
+            show: true,
+            xAxisIndex: [0],
+            top: '45%',
+            start: 12,
+            end: 26
+		},
+        {
+            type: 'inside',
+            xAxisIndex: [0],
+            start: 12,
+            end: 26
+        },
+		{
+            type: 'slider',
+            show: true,
+            xAxisIndex: [1],
+            start: 10,
+            end: 35
+		},
+        {
+            type: 'inside',
+            xAxisIndex: [1],
+            start: 10,
+            end: 35
+        }
+		
+    ],
 	tooltip: {
 		trigger: 'axis'			// 悬浮到折点时候的上线标记线
 	},
@@ -48,11 +88,11 @@ let option = {
 	}],
 	yAxis: [{
 		name: datas.upUnit,
-		boundaryGap: [0, '50%']
+		// boundaryGap: [0, '50%']
 	}, {
 		gridIndex: 1,
 		name: datas.downUnit,
-		boundaryGap: [0, '50%']
+		// boundaryGap: [0, '50%']
 	}],
 	grid: [{
 		bottom: '60%'
@@ -67,14 +107,16 @@ let option = {
 		areaStyle: {			// 折现下是否填充
 			normal: {}
         },  
-		markLine: {				// 分界线线设置
-			silent: true,		// 不响应鼠标点击事件
+		markLine: {				
+			silent: true,		
 			lineStyle: {
-				width: 2,
+				width: 1,
 				color: '#f00'
 			},
 			data: [{
 				yAxis: datas.upMark
+			}, {
+				yAxis: 1
 			}]
 		}
 	}, {
@@ -90,7 +132,7 @@ let option = {
 		markLine: {
 			silent: true,
 			lineStyle: {
-				width: 2,
+				width: 1,
 				color: '#f00'
 			},
 			data: [{
@@ -105,9 +147,13 @@ let option = {
 		top: 20,
 		right: 10,
 		pieces: [{
-			gt: 0,				// 开始值
+			gt: 1,				// 开始值
 			lte: datas.upMark,	// 结束值
 			color: '#0ff'
+		}, {
+			gt: 0,				
+			lte: 1,	
+			color: '#999'
 		}],
 		outOfRange: {			// 超出范围
 			color: '#f00'
