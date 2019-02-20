@@ -2,7 +2,7 @@
  * @Author: web_zhang 
  * @Date: 2019-01-16 18:47:26 
  * @Last Modified by: ZhangYanKun
- * @Last Modified time: 2019-02-19 17:42:16
+ * @Last Modified time: 2019-02-20 09:42:50
  */
 
 
@@ -23,32 +23,30 @@ let option = {
         type: 'line',
         markLine: {
             itemStyle: {
-                normal: { 
+                normal: {
                     lineStyle: {
                         type: 'solid',
                         // 这儿设置的颜色是公共配置，如需单独配置，请在data里配置
                         // color: '#000',
-                    }, 
-                    label: { 
+                    },
+                    label: {
                         show: true,
                         position: 'end'
                     }
                 },
             },
-            data: [
-                {
-                    yAxis: 500,
-                    lineStyle: {
-						color: 'green',
-                    }
-                },
-                {
-                    yAxis: 200,
-                    lineStyle: {
-                        color: 'red'
-                    }
+            data: [{
+                yAxis: 500,
+                lineStyle: {
+                    color: 'green',
                 }
-            ]
+            },
+            {
+                yAxis: 200,
+                lineStyle: {
+                    color: 'red'
+                }
+            }]
         },
     }]
 };
